@@ -1,0 +1,25 @@
+# Operating-system and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Python caches and environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Packaging outputs
+build/
+dist/
+*.egg-info/
+
+# Local inference artifacts
+*.safetensors
+*.npz
+model_weights/
+outputs/
+results/

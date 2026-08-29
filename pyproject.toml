@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structep"
+version = "0.1.0"
+description = "Structure-aware PoseMIL inference for cardiac ion-channel potency"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Cardiac Simulation Laboratory" },
+]
+dependencies = [
+  "numpy>=1.26,<3",
+  "pyyaml>=6,<7",
+  "safetensors>=0.4,<1",
+  "torch>=2.2,<3",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7,<9"]
+
+[project.scripts]
+structep = "structep.cli:main"
+
+[project.urls]
+Repository = "https://github.com/cardiac-modeling/StructEP"
+Issues = "https://github.com/cardiac-modeling/StructEP/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["structep*"]
+namespaces = false
+
+[tool.setuptools.package-data]
+structep = ["configs/*.csv", "configs/*.yaml"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]

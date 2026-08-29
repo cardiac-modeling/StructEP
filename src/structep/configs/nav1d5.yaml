@@ -1,0 +1,67 @@
+schema_version: 1
+strict_config_keys: true
+state_metadata_ablation_mode: symmetric_structure_only
+channel_key: nav1d5
+channel_label: NaV1.5
+
+dataset:
+  morgan_bits: 2048
+  channels:
+    - NaV1.5
+
+model:
+  backbone_type: transformer
+  head_type: standard
+  d_model: 128
+  dropout: 0.1
+  transformer_protein_layers: 3
+  transformer_ligand_layers: 2
+  transformer_fusion_layers: 2
+  transformer_nhead: 4
+  quality_dim: 5
+  quality_hidden: 64
+  pose_pooling: attention
+  use_pose_quality: true
+  per_channel_heads: false
+  use_channel_token: false
+  channel_token_dim: 32
+  two_d_hidden_1: 1024
+  two_d_hidden_2: 512
+  heads_hidden: 256
+  fusion_gate_hidden: 128
+  use_3d_branch: true
+  fusion_mode: cf_gated
+  state_aware_3d: true
+  state_pooling: attention
+  state_feature_dim: 0
+  state_type_emb_dim: 0
+  state_gate_hidden: 128
+  state_aux_logit_bias: 0.0
+  open_inact_delta_scale: 0.0
+  assay_adapter_enabled: false
+  ordinal_thresholds:
+    - 4.0
+    - 5.0
+    - 6.0
+    - 7.0
+  ordinal_value_clip:
+    - 3.0
+    - 8.0
+  ordinal_residual_scale: 1.0
+  log_var_clip:
+    - -4.0
+    - 2.0
+  dual_gaussian_enabled: false
+  dual_gaussian_eta_max: 0.0
+  use_ifp: false
+  ifp_input_dim: 0
+  ifp_aux_enabled: false
+  ifp_aux_dim: 0
+  use_maccs_residual_fusion: false
+  use_plec_head_residual: false
+  plec_sidecar_dim: 0
+
+loss:
+  state_aux_attention_lambda: 0.0
+  state_aux_nonherg_attention_lambda: 0.0
+  state_entropy_lambda: 0.0
