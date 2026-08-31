@@ -262,7 +262,7 @@ StructEP/
 
 ## Research use
 
-StructEP is research software for computational modeling. Its outputs are not clinical recommendations and must not be used as the sole basis for patient-level or safety-critical decisions.
+StructEP is intended for research and computational modeling applications. Results should be interpreted in the context of the underlying model assumptions and the intended scientific use case.
 
 ## License
 
