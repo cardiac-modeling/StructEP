@@ -206,6 +206,14 @@ The JSON report contains one record per input bag. Core fields are:
 
 Use `--include-members` or `include_members=True` to include individual member predictions.
 
+## 批量预测结果
+
+[下载 ChEMBL 37 批量预测结果（CSV）](https://github.com/cardiac-modeling/StructEP/releases/download/chembl37-50000-v1/chembl37_50000.csv) · [发布说明](https://github.com/cardiac-modeling/StructEP/releases/tag/chembl37-50000-v1)
+
+该表包含 50,000 个化合物的 ChEMBL ID、SMILES，以及 hERG、NaV1.5 和 CaV1.2 的预测 pIC50、不确定性、预测分类和质量分级。下载后可将 CSV 保存在本地 `results/` 目录。
+
+数据文件标注的化合物来源版本为 EMBL-EBI 的 [ChEMBL 37](https://www.ebi.ac.uk/chembl/)。ChEMBL 数据采用 [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) 许可。
+
 ## Model and checkpoint contract
 
 The package registry is stored at `src/structep/configs/model_registry.csv`. Each channel has one compact inference configuration:
